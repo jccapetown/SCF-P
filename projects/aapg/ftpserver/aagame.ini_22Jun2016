@@ -1,0 +1,365 @@
+[Configuration]
+BasedOn=..\Engine\Config\BaseGame.ini
+
+[Engine.AccessControl]
+#if left blank then no player may login as admin
+AdminPassword=
+
+[AAGame.AAAccessControl]
+#5 minute ban time
+VoteKickBanTime=300
+
+[Engine.GameInfo]
+DefaultGame=AAGame.AAGameDevelopment
+DefaultServerGame=AAGame.AAGameDevelopment
+GameDifficulty=1.0
+;This is the number of spectators in addition to the number of players
+MaxSpectators=8
+MaxPlayers=24
+;Time limit no longer has any affect
+TimeLimit=0
+;Time in seconds before a player will be moved to spectator team for being idle
+MaxIdleTime=61
+;If set to false then players will not be kicked for being idle
+bKickLiveIdlers=true
+
+[Engine.GameReplicationInfo]
+;The name of the server as displayed on the server info screen as well as the scoreboard
+ServerName="America's Army Proving Grounds Server"
+
+[AAGame.AAGameInfo]
+GameplayEventsWriterClassName=Engine.GameplayEventsWriter
+bLogGameplayEvents=false
+GameSettingsUpdateInterval=20.0
+bAutoDemoRecEnabled=false
+DemoRecDir=
+TimeToSelfKill=20.0
+InitialConnectionKillTimeout=90.0
+
+;This list determines which maps the server will rotate through
+[AAGame.AADataStore_OnlineGameSearch]
+MapRotationList="BDX_Breach_EX"
+MapRotationList="BDX_Watchdog_C4"
+MapRotationList="BDX_InnerHospital_EX"
+MapRotationList="BDX_RedLine_C4"
+MapRotationList="BDX_Intercept_EX"
+MapRotationList="BDX_SpringStreet_EX"
+MapRotationList="BDX_Crossfire_C4"
+MapRotationList="BDX_Lockdown_EX"
+MapRotationList="BDX_Siege_EX"
+MapRotationList="BDX_OuterHospital_C4"
+MapRotationList="BDX_Shadowstep_EX"
+MapRotationList="BDX_Breach_EX"
+MapRotationList="BDX_Watchdog_C4"
+MapRotationList="BDX_InnerHospital_EX"
+MapRotationList="BDX_Intercept_C4"
+MapRotationList="BDX_RedLine_EX"
+MapRotationList="BDX_SpringStreet_EX"
+MapRotationList="BDX_Siege_C4"
+MapRotationList="BDX_Lockdown_EX"
+MapRotationList="BDX_Crossfire_EX"
+MapRotationList="BDX_OuterHospital_C4"
+MapRotationList="BDX_Shadowstep_EX"
+MapRotationList="FLO_Downtown_EX"
+MapRotationList="FLO_Overload_C4"
+MapRotationList="FLO_InnerHospital_EX"
+MapRotationList="FLO_Slums_TH"
+MapRotationList="FLO_Watchdog_C4"
+MapRotationList="FLO_Intercept_EX"
+MapRotationList="FLO_RedLine_C4"
+MapRotationList="FLO_HarborAssault_TH"
+MapRotationList="FLO_Hospital_EX"
+MapRotationList="FLO_ColdFront_C4"
+MapRotationList="FLO_Downtown_EX"
+MapRotationList="FLO_Overload_C4"
+MapRotationList="FLO_InnerHospital_EX"
+MapRotationList="FLO_Watchdog_AC"
+MapRotationList="FLO_RedLine_EX"
+MapRotationList="FLO_Slums_C4"
+MapRotationList="FLO_ColdFront_EX"
+MapRotationList="FLO_HarborAssault_TH"
+MapRotationList="FLO_Intercept_C4"
+MapRotationList="FLO_Hospital_EX"
+
+;This is the list of possible maps player can vote to. Please keep it in alphabetical order
+MapVoteList="BDX_Breach_EX"
+MapVoteList="BDX_Bridge_EX"
+MapVoteList="BDX_Crossfire_C4"
+MapVoteList="BDX_Crossfire_EX"
+MapVoteList="BDX_InnerHospital_EX"
+MapVoteList="BDX_Intercept_C4"
+MapVoteList="BDX_Intercept_EX"
+MapVoteList="BDX_Lockdown_EX"
+MapVoteList="BDX_OuterHospital_C4"
+MapVoteList="BDX_Redline_C4"
+MapVoteList="BDX_Redline_EX"
+MapVoteList="BDX_Shadowstep_EX"
+MapVoteList="BDX_Siege_C4"
+MapVoteList="BDX_Siege_EX"
+MapVoteList="BDX_Springstreet_EX"
+MapVoteList="BDX_Watchdog_C4"
+MapVoteList="FLO_Bridge_EX"
+MapVoteList="FLO_BridgeNight_EX"
+MapVoteList="FLO_Coldfront_C4"
+MapVoteList="FLO_Coldfront_EX"
+MapVoteList="FLO_Downtown_EX"
+MapVoteList="FLO_HarborAssault_TH"
+MapVoteList="FLO_HarborAssaultNight_TH"
+MapVoteList="FLO_Hospital_EX"
+MapVoteList="FLO_InnerHospital_EX"
+MapVoteList="FLO_Intercept_C4"
+MapVoteList="FLO_Intercept_EX"
+MapVoteList="FLO_Overload_C4"
+MapVoteList="FLO_Redline_C4"
+MapVoteList="FLO_Redline_EX"
+MapVoteList="FLO_Slums_C4"
+MapVoteList="FLO_Slums_TH"
+MapVoteList="FLO_Watchdog_AC"
+MapVoteList="FLO_Watchdog_C4"
+
+;List of training maps
+TrainingMapList="STX_Tutorial"
+TrainingMapList="STX_Giunta_Range"
+
+;List of Shoot houses in alphabetical order
+ShoothouseMapList="SH_870MCS"
+ShoothouseMapList="SH_M4"
+ShoothouseMapList="SH_M9"
+ShoothouseMapList="SH_M14"
+ShoothouseMapList="SH_M16"
+ShoothouseMapList="SH_M24"
+ShoothouseMapList="SH_M67"
+ShoothouseMapList="SH_M249"
+
+[AAGame.AAGameMultiplayerBase]
+#Minimum number of players to wait for before starting the match
+MinNetPlayers=2
+#Time after MinNetPlayers join to wait for more players
+NetWait=60
+;Time spent in weapon selection and communication
+BeginningOfRoundDelay=12
+;Extra time spent in weapon selection and communication for swap round
+SwapRoundDelay=6
+#False - match ends early if one team wins over half the rounds
+#True - match will be played for all rounds, regardless of team score
+bPlayAllRounds=false
+
+[AAGame.AAGamePVPBase]
+bScaleWithNumPlayers=true
+#These override MaxPlayers in production maps
+MaxTeamSizeBDX=6
+MaxTeamSizeFLO=12
+#If > 0, these override the map TimeLimits
+TimeLimitOverrideBDX=180
+TimeLimitOverrideFLO=240
+#Maximum number of rounds per match
+RoundsPerMatchBDX=15
+RoundsPerMatchFLO=15
+
+[AAGame.AAGameReplicationInfo]
+;Time in seconds before a flash or frag grenade may be thrown
+ForbidGrenadeTimeFLO=0
+ForbidGrenadeTimeBDX=0
+;If true, then players must use autopick to choose their team
+bDefaultOnlyAllowAutoPick=false
+;Refers to aim assist when using a controller
+bDefaultAllowControllerAimAssist=true
+bOnlineVoiceEnabled=true
+;The server owner name, website and hosting company and admin name and email, if filled out, appear on the Server Info screen
+sDefaultServerOwnerName=
+sDefaultServerOwnerWebsite=
+sDefaultServerHostingCompany=
+sDefaultAdminName=
+sDefaultAdminEmail=
+;The message of the day is displayed on the team select screen (first screen seen when joining a game) and on the server info screen
+sDefaultServerMOTD="Visit the forums! forum.americasarmy.com"
+;The admin message is displayed on the server info screen
+sDefaultAdminMessage="Welcome to AA Proving Grounds!"
+;When true players may vote to change or restart maps
+bDefaultAllowMapVoting=false
+;When true all votes not dealing with maps may be called
+bDefaultAllowKickVoting=false
+DefaultVoteDuration=15
+;When true players may vote for the next map at the end of a match
+bDefaultAllowAARMapVoting=true
+;When true hard core mode is enabled
+;Hard core = Reduced HUD and no revives
+bDefaultHardcoreMode=false
+;If true then teams will attempt to balance numbers at the start of each round
+bDefaultAutoBalanceTeams=true
+;When true friendly fire damage is reduced by 80%
+bDefaultReduceFriendlyFire=true
+;When true players are not punished for ROE violations (ROE = dealing large amount of damage to friendlies)
+bDefaultDisableROE=false
+;When false players bleed to 1% and then stop bleeding
+bDefaultAllowBleedOut=true
+;When false players cannot be revives following a head shot
+bDefaultReviveOnHeadshots=true
+;The number of times a player may be revived
+MaxRevives=1
+;When true the C4 device may not be secured by the defense team
+bDefaultForbidBombSecure=true
+;When true all character shadows for all clients are forced off
+bDefaultForbidShadows=false
+;When true the minimal HUD option is forced on for all clients
+bHUD_ForceMinimalHUD=false
+;When false the active players for each team is not displayed on the HUD and only friendlies are displayed on the scoreboard
+bDefaultHUD_ForcePlayerCountOff=true
+;When true enemy spots only appear on the minimap
+bDefaultHUD_ForceInWorldEnemySpotsOff=false
+;When true the messages for when a player kills another are turned off for all clients
+bDefaultHUD_ForceActivityFeedOff=false
+;No longer used
+bHUD_ForceHitIndicatorOff=true
+bAllowSpectateMode_ActionCam=true
+bAllowSpectateMode_3pOrbit=true
+bAllowSpectateMode_FreeCam=true
+;When true players on the spectate team experience suppression, flash grenades and other screen FX
+bDefaultForceSpectateTeamScreenFX=false
+;When false, prevents specators from seeing occluded mesh outlines
+bDefaultAllowOccludedMeshSpectate=true
+;When true, will use the roles setup as dictated by the map
+bDefaultUseRoles=true
+;When true, the server will do hit detection instead of the client
+bDefaultUseServerSideHitDetection=false
+;When true, the server will allow global VoIP for all players
+bDefaultAllowGlobalVoiceChat=true
+;When true, the server will allow VoIP for all specators
+bDefaultAllowSpectatorVoiceChat=true
+;When true, the server will allow text chat for all players
+bDefaultAllowGlobalTextChat=true
+
+[Engine.WorldInfo]
+bShowLightingRebuildMessage=TRUE
+DecalManagerClassPath=AAGame.AADecalManager
+
+[DefaultPlayer]
+Name=Player
+team=255
+
+[Engine.PlayerController]
+ForceFeedbackManagerClassName="WinDrv.XnaForceFeedbackManager"
+
+[Engine.DecalManager]
+;The time in seconds bullet decals and grenade scorch marks hang around
+DecalLifeSpan=30.0
+
+[AAGame.AAPlayerController]
+;the amount of damage a player may do before being killed for violating ROE
+FriendlyFireLimit=200
+;These are all client-side settings
+bPunkbusterMsgs=false
+bHoldToSprint=false
+bDoubleTapSprint=false
+bGrenadesInWeaponCycle=false
+fMasterVolume=1.f
+fMusicVolume=0.8f
+fUIVolume=0.8.f
+fSoundEffectsVolume=100.f
+fVOVolume=100.f
+bMuteWhenFocusLost=true
+bVOIPEnabled=true
+;This refers to the music which plays at the 30 second mark in a round
+bRoundEndWarningMusic=true
+Audio_VoiceSelection=255
+bDisplayNumPing=true
+bCameraBob=false
+sNonAuthSoldierName=DidNotSetName
+bParentalLock_Violence=false
+bParentalLock_VOIP=false
+bParentalLock_Chat=false
+bUseDualRenderScopes=false
+GameSettingsUpdateInterval=15
+;Is actually the cosine of the angle between the view and target.
+AimAssistTargetAngle=.87
+AimAssistTargetSearchTime=.1f
+bSwitchToWeaponOnPickup=true
+DisplayDebugVoiceFontName=EngineFonts.SmallFont
+PawnCamoIdx[0]=-1
+PawnCamoIdx[1]=-1
+PawnCamoIdx[2]=-1
+PawnCamoIdx[3]=-1
+PawnCamoIdx[4]=-1
+HeadPreference[0]=HEAD_White
+HeadPreference[1]=HEAD_White
+HeadPreference[2]=HEAD_White
+HeadPreference[3]=HEAD_White
+HeadPreference[4]=HEAD_White
+BadgePreference=0
+GearPreference[0]=0
+GearPreference[1]=0
+GearPreference[2]=0
+GearPreference[3]=0
+GearPreference[4]=0
+bShowOccludedMeshes=true
+
+[AAGame.AAPawn]
+AimAssistCapsuleRadius=30.0f
+
+SightCheckBones=Head
+SightCheckBones=L_Shoulder
+SightCheckBones=R_Shoulder
+SightCheckBones=Pelvis
+SightCheckBones=L_Knee
+SightCheckBones=R_Knee
+
+BulletMagnetismTargetPoints=(BoneName=Head)
+BulletMagnetismTargetPoints=(BoneName=Pelvis)
+BulletMagnetismTargetPoints=(BoneName=Spine2)
+BulletMagnetismTargetPoints=(BoneName=L_Ankle)
+;BulletMagnetismTargetPoints=(BoneName=R_Ankle)
+;BulletMagnetismTargetPoints=(BoneName=L_Elbow)
+BulletMagnetismTargetPoints=(BoneName=R_Elbow)
+BulletMagnetismTargetPoints=(BoneName=L_Knee)
+BulletMagnetismTargetPoints=(BoneName=R_Knee)
+;BulletMagnetismTargetPoints=(BoneName=L_Wrist)
+;BulletMagnetismTargetPoints=(BoneName=R_Wrist)
+
+[Engine.AutoTestManager]
+bExitOnCyclesComplete=true
+NumAutomatedMapTestingCycles=1
+AutomatedMapTestingList=BurnsTest
+AutomatedMapTestingList=MBD_Mission_AD
+
+
+#This allows disabling of all scoring reporting (and profile transfer).
+#LAN mode should already disable scoring reporting.
+[AAGame.AAUPlayerProfileManagement]
+bDisableAAUServerUpdates=false
+
+#This allows enable/disabling kicking players that haven't first logged into their AAU account
+#on authorized (non LAN) servers.
+[AAGame.AASteamClientAuthentication]
+bKickIfNoAAUAccount=true
+
+[AAGame.AASteamServerAuthentication]
+bDisableMBSUpdatingMessage=true
+
+[AAGame.AAOnlineGameSearch]
+RandCreateChancePercent=0.333
+AutoCreateOnlineGameFallback=true
+ShortTimer=0.001
+LongTimer=0.016
+SearchRetryDelay=5.0
+MaxSearchRound=4
+DedicatedServerBonus=100
+PopulationSpreadScaler=8
+PopulationSpreadConstant=1
+PopulationCountScaler=1
+PopulationCountConstant=1
+PingScaler=-1
+PingCutoffValue=400
+
+[AkAudio.AkComponent]
+OcclusionUpdateFrequency=0.4f
+OcclusionUpdateRandomization=0.2f
+OcclusionInterpolationTime=0.35f
+BSPMinOcclusion=0.1
+BSPMaxOcclusion=0.4
+BSPMinOcclusionThickness=50
+BSPMaxOcclusionThickness=600
+BSPMinObstruction=0.0
+BSPMaxObstruction=0.5
+BSPMinObstructionThickness=50
+BSPMaxObstructionThickness=400
+MaxOcclusionDistance=7000.0f
