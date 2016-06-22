@@ -14,9 +14,9 @@ import func_inifile
 
 
 #Global Variables
-ftpserver = '197.84.209.44'
-ftpusername = '1223840_8777'
-ftppassword = 'Capetown1'
+ftpserver = 'server'
+ftpusername = 'usern'
+ftppassword = 'password'
 ftpfilepath = '/1223840/aapg/AAGame/Config/'
 
 server_gameini = 'AAGame.ini'
