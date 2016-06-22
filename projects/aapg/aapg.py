@@ -14,16 +14,35 @@ import func_inifile
 
 
 #Global Variables
-ftpserver = '127.0.0.1'
-ftpusername = 'username'
-ftppassword = 'password'
-ftpfilepath = '/'
+ftpserver = '197.84.209.44'
+ftpusername = '1223840_8777'
+ftppassword = 'Capetown1'
+ftpfilepath = '/1223840/aapg/AAGame/Config/'
 
-server_gameini = 'aagame.ini'
-server_gameini_dst = 'serverconfig/aagame.ini'
-my_ini = 'myconfig/aagame.ini'
-new_gameini = 'generatedconfig/aagame.ini'
-backupfile = '%s_%s' % (server_gameini, datetime.date.today().strftime('%d%b%Y') )
+server_gameini = 'AAGame.ini'
+server_gameini_dst = 'serverconfig/AAGame.ini'
+my_ini = 'myconfig/AAGame.ini'
+new_gameini = 'generatedconfig/AAGame.ini'
+
+server_UGCfile = 'AASteamUGCManager.ini'
+server_UGCfile_dst = 'serverconfig/AASteamUGCManager.ini'
+my_UGCfile = 'myconfig/AASteamUGCManager.ini'
+
+
+server_pbfile = 'pbsvuser.cfg'
+server_pbfile_dst = 'serverconfig/pbsvuser.cfg'
+my_pbfile = 'myconfig/pbsvuser.cfg'
+pbpath = '/1223840/aapg/Binaries/Win32/pb'
+
+
+backupdate = datetime.date.today().strftime('%d%b%Y')
+backupfile = '%s_%s' % (server_gameini, backupdate )
+backupUGCfile = '%s_%s' % (server_UGCfile, backupdate )
+backupPBfile = '%s_%s' % (server_pbfile, backupdate )
+
+
+
+
 #Function/Methods/class definition
 
 
@@ -72,15 +91,29 @@ func_inifile.write_ini(new_gameini,filedict)
                
 #Rename the ftp server config file and copy the new one
 ftp = func_ftp.connect(ftpserver, ftpusername, ftppassword)
+func_ftp.cd(ftp,ftpfilepath) 
 func_ftp.rename(ftp, server_gameini, backupfile)
 func_ftp.upload(ftp, new_gameini, server_gameini)
 func_ftp.close(ftp)                
             
     
+#Lets check the UGC file
+ftp = func_ftp.connect(ftpserver, ftpusername, ftppassword)
+func_ftp.cd(ftp,ftpfilepath) 
+func_ftp.download(ftp, server_UGCfile,server_UGCfile_dst)
+func_ftp.rename(ftp, server_UGCfile, backupUGCfile)
+func_ftp.upload(ftp, my_UGCfile, server_UGCfile)
+func_ftp.close(ftp)
 
 
 
-
+#Lets check the PBSV file
+ftp = func_ftp.connect(ftpserver, ftpusername, ftppassword)
+func_ftp.cd(ftp,pbpath) 
+func_ftp.download(ftp, server_pbfile,server_pbfile_dst)
+func_ftp.rename(ftp, server_pbfile, backupPBfile)
+func_ftp.upload(ftp, my_pbfile, server_pbfile)
+func_ftp.close(ftp)
 
 
 
