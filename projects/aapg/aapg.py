@@ -1,5 +1,5 @@
 #File Name   : aapg.py 
-#Description : aapg 
+#Description : This script remotely updates Americas Army Proving Grounds config files with your prefered config 
 #Author      : Jacques Coetzee 
 #Date        : 2016-06-21 08:34:12.758000 
 
