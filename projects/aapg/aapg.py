@@ -15,7 +15,7 @@ import func_inifile
 
 #Global Variables
 ftpserver = '127.0.0.1'
-ftpusername = 'jacquesc'
+ftpusername = 'username'
 ftppassword = 'password'
 ftpfilepath = '/'
 
@@ -71,7 +71,7 @@ func_inifile.write_ini(new_gameini,filedict)
 
                
 #Rename the ftp server config file and copy the new one
-ftp = func_ftp.connect('127.0.0.1', 'jacquesc', 'password')
+ftp = func_ftp.connect(ftpserver, ftpusername, ftppassword)
 func_ftp.rename(ftp, server_gameini, backupfile)
 func_ftp.upload(ftp, new_gameini, server_gameini)
 func_ftp.close(ftp)                
